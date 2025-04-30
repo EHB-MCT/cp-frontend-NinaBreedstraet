@@ -4,10 +4,11 @@
   font-weight: lighter;
 }
 
-*, body {
+body, html {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: 'Baskerville', serif;
-  height: 3000px;
 }
 
 img{
@@ -17,16 +18,17 @@ img{
 }
 
 .blur-in{
-  color: darkgreen;
-  position: sticky;
-  height: 60px;
-  width: 500px;
-  top: 38px;
+  color: white;
+  position: absolute;
+  height: 120px;
+  width: 470px;
+  top: 18rem;
   left: 32%;
   font-style: italic;  
   font-size: 50px;
   font-weight: 200;
   overflow: hidden;
+  z-index: 5;
 }
 
 .blur-in img{
@@ -35,20 +37,11 @@ img{
   height: auto;
 }
 
-.BG1{
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .grass1 img {
   top: 400px;
   height: 80px;
   width: auto;
-  position: sticky;
+  position: relative;
   bottom: 0;
   display: flex;
   justify-content: space-between;
@@ -59,40 +52,44 @@ img{
   top: 400px;
   height: 400px;
   width: auto;
-  position: sticky;
+  position: relative;
   bottom: 0;
   display: flex;
   justify-content: space-between;
   z-index: 1;
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 3000px;
-  font-family: 'Baskerville', serif;
-}
-
 .container {
   position: relative;
   height: 100vh;
   overflow-x: hidden;
+  overflow: visible;
 }
 
 .background {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
   z-index: 0;
+  overflow: hidden;
+  will-change: filter;
+  backface-visibility: hidden;
+}
+
+.BG1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  will-change: filter;
 }
 
 .grass {
-  position: fixed;
-  top: 480px;
   width: 100%;
   height: auto;
   display: flex;
@@ -110,10 +107,9 @@ body, html {
   height: auto;
 }
 
-
 .text-container {
-  position: fixed;
-  top: 60%;
+  position: absolute;
+  top: 49rem;
   left: 10%;
   width: 35%;
   padding: 20px;
@@ -121,11 +117,11 @@ body, html {
 }
 
 .text-container2 {
-  position: fixed;
-  top: 90%;
+  position: absolute;
+  top: 50rem;
   left: 70%;
   width: 25%;
-  padding: 20px;
+  padding: 10px;
   z-index: 1;
 }
 
@@ -135,5 +131,15 @@ body, html {
 }
 
 .BG2{
-  background-color: red;
+  position: relative;
+  top: -300px;
+}
+
+.scene1 {
+  min-height: 100vh;
+}
+
+.scene2 {
+  position: relative;
+  height: 30vh;
 }

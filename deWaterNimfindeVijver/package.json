@@ -14,6 +14,8 @@
     "framer-motion": "^12.5.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-router": "^7.5.3",
+    "react-router-dom": "^7.5.3",
     "react-scripts": "^5.0.1",
     "sass": "1.86.0",
     "typescript": "4.9.5",

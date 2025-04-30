@@ -7,7 +7,7 @@ export const BlurOut2 = ({ children }: { children: React.ReactNode }) => {
 
     const { scrollYProgress } = useScroll();
 
-    const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.1, 1, 0]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.3, 0.5], [0, 0.1, 1, 0]);
     
     return (
       <motion.p

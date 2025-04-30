@@ -1,12 +1,11 @@
 import React from "react";
-import { Parallax } from './components/Parallax'
+import Home from "./Pages/Home"
+import Navigation from "components/Navigation/Navigation";
+import { RouterProvider } from "react-router";
+import router from "router";
 
 function App() {
-  return (
-    <div className="App">
-      <Parallax />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
