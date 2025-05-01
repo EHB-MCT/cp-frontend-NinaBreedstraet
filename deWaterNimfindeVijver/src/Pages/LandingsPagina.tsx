@@ -1,4 +1,3 @@
-import React from "react";
 import { Parallax } from "components/Parallax";
 
 function LandingsPagina() {
