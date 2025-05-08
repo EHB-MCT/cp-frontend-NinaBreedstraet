@@ -1,16 +1,237 @@
 @font-face {
-    font-family: "Helvtica";
-    src: url("../../public/HelveticaNeue.ttc");
+  font-family: "Helvtica";
+  src: url("../../public/HelveticaNeue.ttc");
 }
 
 @font-face {
-    font-family: "Bungee";
-    src: url("../../public/Arbutus_Slab\,Bungee/Bungee/Bungee-Regular.ttf");
+  font-family: "Bungee";
+  src: url("../../public/Arbutus_Slab\,Bungee/Bungee/Bungee-Regular.ttf");
 }
 
+.titel1 {
+  color: red;
+  font-family: "Bungee";
+  margin-left: 3.5rem;
+}
 
-.titel{
-    color: red;
-    font-family: "Bungee";
-    margin-left: 100px;
+.sprookjeStories {
+  background-color: rgb(237, 244, 236);
+  width: 20rem;
+  min-height: 25rem;
+  height: auto;
+  border-radius: 20px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  justify-content: left;
+  align-items: flex-start;
+  position: relative;
+  font-family: "Helvtica";
+  &:hover {
+    box-shadow: 0px 0px 9px rgb(177, 177, 177);
+  }
+}
+
+.sprookje {
+  background-color: rgb(237, 244, 236);
+  width: 40rem;
+  min-height: 25rem;
+  height: auto;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  justify-content: left;
+  align-items: flex-start;
+  position: relative;
+  font-family: "Helvtica";
+}
+
+.nameSprookje {
+  color: black;
+  font-size: 20px;
+  font-style: bold;
+  margin: 5px;
+  margin-top: 8px;
+}
+
+.titleSprookje {
+  color: grey;
+  font-size: 16px;
+  font-style: light;
+  margin: 5px;
+}
+
+.genreSprookje {
+  padding: Opx;
+  color: grey;
+  font-size: 14px;
+  font-style: light;
+  margin: 5px;
+}
+
+.imgSprookje {
+  width: 20rem;
+  overflow: hidden;
+  height: 20rem;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.imgSprookje img {
+  width: 20rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20rem;
+  align-items: flex-end;
+}
+
+.link a:link {
+  font-family: "Helvetica";
+  text-decoration: none;
+}
+
+.sprookjeDeelContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 90%;
+  padding: 2rem;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sprookjeDeel {
+  background-color: rgb(237, 244, 236);
+  width: 40rem;
+  height: 20rem;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  font-family: "Helvtica";
+
+  &:hover {
+    box-shadow: 0px 0px 9px rgb(177, 177, 177);
+  }
+}
+
+.pijltjesContainer {
+  padding: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -100px;
+}
+
+.splide__arrow {
+  position: absolute;
+  color: red;
+  width: 50px;
+  border: none;
+  background-color: white;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 50px;
+  padding: 0px;
+
+  &:first-of-type {
+    left: -20px;
+    z-index: 10;
+  }
+
+  &:last-of-type {
+    right: 90px;
+    z-index: 10;
+  }
+}
+
+.splideWrapper {
+  position: relative;
+  width: 98%;
+  height: 25rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splide__arrow:hover {
+  background-color: red;
+  color: white;
+}
+
+.splide__list {
+  background-color: red;
+}
+
+.titel2 {
+  color: red;
+  font-family: "Bungee";
+  margin-left: 7.5rem;
+}
+
+.storiesContainer {
+  margin-top: -7rem;
+  padding: 7.5rem;
+}
+
+.back {
+  position: fixed;
+  color: red;
+  width: 50px;
+  height: 50px;
+  border: red solid 3px;
+  // height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  font-size: 40px;
+  font-family: "Helvetica";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin: 2rem;
+
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+.buttonFooter {
+  background-color: black;
+  font-family: "Helvetica";
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  margin-top: 50px;
+}
+
+.buttonFooter:hover {
+  box-shadow: 0px 0px 8px rgb(150, 150, 150);
+}
+
+.tekst {
+  font-family: "Helvetica";
+  color: grey;
+  margin-left: 7.5rem;
 }
