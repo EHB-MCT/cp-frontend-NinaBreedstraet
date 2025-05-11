@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Helvtica";
-  src: url("../../../public/HelveticaNeue.ttc");
+  font-family: "Helvetica";
+  src: url("../../../public/helvetica-neue-5/HelveticaNeueRoman.otf");
 }
 
 @font-face {
@@ -15,6 +15,41 @@
   justify-content: space-between;
 }
 
+.searchIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: lightgrey;
+  font-weight: lighter;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.searchOverlay {
+  position: absolute;
+  top: 5.5rem;
+  left: 61rem;
+  width: 20%;
+  font-weight: lighter;
+  padding: 1rem;
+  z-index: 1000;
+  border: none;
+  border-radius: 70px;
+
+  input {
+    width: 100%;
+    background: lightgrey;
+    border: none;
+    color: black;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: lighter;
+    border-radius: 70px;
+  }
+}
+
 .links img {
   width: 100px;
   margin-left: 100px;
@@ -23,6 +58,7 @@
 
 .rechts {
   font-family: "Helvetica";
+  font-weight: lighter;
   display: flex;
   flex-direction: row;
   gap: 15px;

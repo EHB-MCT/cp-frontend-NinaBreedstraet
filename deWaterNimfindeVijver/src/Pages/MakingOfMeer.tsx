@@ -4,7 +4,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { useParams } from "react-router";
 import DATA from "../data.json";
 
-function MakingOf() {
+function MakingOfMeer() {
   const { id } = useParams();
   const sprookje = DATA.find((item) => item.id === id);
 
@@ -34,21 +34,13 @@ function MakingOf() {
       <div className={styles.story}>
         <div>
           <h3 className={styles.storyTitle}>Verhaal</h3>
-          <p className={styles.storyParagraph}>{sprookje.description}</p>
+          <p className={styles.storyParagraph}>{sprookje.leesMeer}</p>
           <h3 className={styles.storyTitle}>Auteur</h3>
           <p className={styles.storyParagraph}>{sprookje.auteur}</p>
           <p className={styles.storyParagraph}>{sprookje.Genre}</p>
-          <a
-            className={styles.buttonFooter}
-            href={`/making-of-meer/${sprookje.id}`}
-          >
-            Lees meer
+          <a className={styles.buttonFooter} href={`/making-of/${sprookje.id}`}>
+            Lees minder
           </a>
-        </div>
-
-        <div className={styles.pictureLink}>
-          <img src={sprookje.picture2} className={styles.pictures} alt="" />
-          <a href={sprookje.link}>{IoEyeOutline({})} View Website</a>
         </div>
       </div>
       <div className={styles.extraInfo}>
@@ -66,4 +58,4 @@ function MakingOf() {
   );
 }
 
-export default MakingOf;
+export default MakingOfMeer;

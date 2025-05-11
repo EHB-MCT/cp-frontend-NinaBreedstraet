@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Helvtica";
-  src: url("../../public/HelveticaNeue.ttc");
+  font-family: "Helvetica";
+  src: url("../../public/helvetica-neue-5/HelveticaNeueRoman.otf");
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   justify-content: left;
   align-items: flex-start;
   position: relative;
-  font-family: "Helvtica";
+  font-family: "Helvetica";
   &:hover {
     box-shadow: 0px 0px 9px rgb(177, 177, 177);
   }
@@ -46,30 +46,11 @@
   justify-content: left;
   align-items: flex-start;
   position: relative;
-  font-family: "Helvtica";
+  font-family: "Helvetica";
 }
 
-.nameSprookje {
-  color: black;
-  font-size: 20px;
-  font-style: bold;
-  margin: 5px;
-  margin-top: 8px;
-}
-
-.titleSprookje {
-  color: grey;
-  font-size: 16px;
-  font-style: light;
-  margin: 5px;
-}
-
-.genreSprookje {
-  padding: Opx;
-  color: grey;
-  font-size: 14px;
-  font-style: light;
-  margin: 5px;
+.splide__list {
+  background-color: red;
 }
 
 .imgSprookje {
@@ -84,105 +65,17 @@
   width: 20rem;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 20rem;
-  align-items: flex-end;
-}
-
-.link a:link {
-  font-family: "Helvetica";
-  text-decoration: none;
-}
-
-.sprookjeDeelContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  width: 90%;
-  padding: 2rem;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.sprookjeDeel {
-  background-color: rgb(237, 244, 236);
-  width: 40rem;
-  height: 20rem;
-  border-radius: 20px;
-  padding: 20px;
-  display: flex;
-  font-family: "Helvtica";
-
-  &:hover {
-    box-shadow: 0px 0px 9px rgb(177, 177, 177);
-  }
-}
-
-.pijltjesContainer {
-  padding: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: -100px;
-}
-
-.splide__arrow {
-  position: absolute;
-  color: red;
-  width: 50px;
-  border: none;
-  background-color: white;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 50px;
-  padding: 0px;
-
-  &:first-of-type {
-    left: -20px;
-    z-index: 10;
-  }
-
-  &:last-of-type {
-    right: 90px;
-    z-index: 10;
-  }
-}
-
-.splideWrapper {
-  position: relative;
-  width: 98%;
-  height: 25rem;
-  margin-left: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.splide__arrow:hover {
-  background-color: red;
-  color: white;
-}
-
-.splide__list {
-  background-color: red;
-}
-
 .titel2 {
   color: red;
   font-family: "Bungee";
   margin-left: 7.5rem;
+  margin-top: 4rem;
 }
 
 .storiesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem;
   margin-top: -7rem;
   padding: 7.5rem;
 }
@@ -193,7 +86,6 @@
   width: 50px;
   height: 50px;
   border: red solid 3px;
-  // height: 50px;
   border-radius: 50%;
   font-size: 24px;
   cursor: pointer;
@@ -224,14 +116,174 @@
   text-decoration: none;
   color: white;
   margin-top: 50px;
+
+  &:hover {
+    box-shadow: 0px 0px 8px rgb(150, 150, 150);
+  }
 }
 
-.buttonFooter:hover {
-  box-shadow: 0px 0px 8px rgb(150, 150, 150);
+.buttonAbout {
+  background-color: black;
+  font-family: "Helvetica";
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  margin-top: 50px;
+  margin-left: 3.5rem;
+
+  &:hover {
+    box-shadow: 0px 0px 8px rgb(150, 150, 150);
+  }
 }
 
-.tekst {
+.tekstAbout {
   font-family: "Helvetica";
   color: grey;
-  margin-left: 7.5rem;
+  margin-left: 3.5rem;
+  font-weight: lighter;
+}
+
+.nameSprookje {
+  color: black;
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 5px;
+  margin-top: 1rem;
+}
+
+.titleSprookje {
+  color: grey;
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 5px;
+}
+
+.genreSprookje {
+  padding: Opx;
+  color: grey;
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 5px;
+}
+
+.link a:link {
+  font-family: "Helvetica";
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20rem;
+  align-items: flex-end;
+}
+
+.images img {
+  background-color: red;
+  width: 10rem;
+}
+
+.pictures {
+  width: 10rem;
+}
+
+.nameAndTitle {
+  background-color: rgb(237, 244, 236);
+  font-family: "Helvetica";
+  width: 30rem;
+  height: 8rem;
+  margin-top: 15rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.title {
+  color: red;
+  font-size: 35px;
+}
+
+.name {
+  color: grey;
+  font-size: 18px;
+  font-weight: lighter;
+  margin-top: -1rem;
+}
+
+.containerMakingOf {
+  color: red;
+  font-family: "Bungee";
+  margin-left: 7rem;
+}
+
+.story {
+  font-family: "Helvetica";
+  font-size: 16px;
+  display: flex;
+  width: 76.8rem;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pictureLink img {
+  box-shadow: 0px 0px 9px rgb(177, 177, 177);
+}
+
+.pictureLink {
+  display: flex;
+  flex-direction: column;
+  font-weight: lighter;
+  gap: 1rem;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.storyTitle {
+  color: black;
+  font-style: bold;
+}
+
+.storyParagraph {
+  color: grey;
+  font-weight: lighter;
+}
+
+.extraInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  width: 76.8rem;
+  justify-content: space-between;
+}
+
+.images img {
+  overflow: hidden;
+  width: 25rem;
+  height: 25rem;
+  box-shadow: 0px 0px 9px rgb(177, 177, 177);
+}
+
+.extraInfoText {
+  color: grey;
+  font-family: "Helvetica";
+}
+
+.slider {
+  margin-left: 3.5rem;
 }

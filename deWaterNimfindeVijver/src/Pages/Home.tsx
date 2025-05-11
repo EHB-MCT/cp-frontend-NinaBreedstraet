@@ -6,48 +6,22 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import { SlArrowLeftCircle, SlArrowRightCircle } from "react-icons/sl";
 import DATA from "../data.json";
 import SprookjeStories from "components/SprookjeStories";
-import { Slider } from "../components/Slider";
+import { Slider } from "../components/Slider/Slider";
+import { useSearch } from "Hooks/useSearch";
 
 function Home() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const { searchTerm } = useSearch();
 
   const filteredSprookjes = DATA.filter((sprookjes) =>
     sprookjes.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  // const[sprookjes, setSprookjes] = useState(data);
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         "https://rebrickable.com/api/v3/lego/sets/?key=571cc24f110a9a44d04899dba0b5f854&page_size=10"
-  //       );
-  //       const data = await response.json();
-  //       setSprookjes(
-  //         data.results.map(set => ({
-  //           ...set,
-  //           complete: false,
-  //         })))
-  //     } catch (error) {
-  //       console.error("Fout bij ophalen van data:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
 
   return (
     <div>
       <div className={styles.titel1}>
         <h2 className={styles.titel1}>Hot Today</h2>
 
-        <Slider />
-
-        {/* <Sprookje imgUrl='' title='' /> */}
+        <Slider sprookjesData={filteredSprookjes} />
       </div>
 
       <div>

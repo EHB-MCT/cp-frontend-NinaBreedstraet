@@ -1,6 +1,5 @@
 // import LandingsPagina from "./Landingspagina";
 import styles from "../Pages/Styles.module.scss";
-import { HiArrowSmRight } from "react-icons/hi";
 
 type SprookjeContentProps = {
   name: String;
@@ -18,21 +17,23 @@ function SprookjeStories({
   link,
 }: SprookjeContentProps) {
   return (
-    <div className={styles.sprookjeStories}>
-      <div className={styles.imgSprookje}>
-        <img src={img} alt="Sprookje" />
-      </div>
-      <div className={styles.container}>
-        <div className={styles.info}>
-          <h1 className={styles.nameSprookje}>{name}</h1>
-          <p className={styles.titleSprookje}>{title}</p>
-          <p className={styles.genreSprookje}>{genre}</p>
+    <a href={link}>
+      <div className={styles.sprookjeStories}>
+        <div className={styles.imgSprookje}>
+          <img src={img} alt="Sprookje" />
         </div>
-        <div className={styles.link}>
-          <a href={link}>&rarr;</a>
+        <div className={styles.container}>
+          <div className={styles.info}>
+            <h1 className={styles.nameSprookje}>{name}</h1>
+            <p className={styles.titleSprookje}>{title}</p>
+            <p className={styles.genreSprookje}>{genre}</p>
+          </div>
+          <div className={styles.link}>
+            <a href={link}>&rarr;</a>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
