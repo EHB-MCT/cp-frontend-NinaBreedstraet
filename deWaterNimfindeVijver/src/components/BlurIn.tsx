@@ -1,12 +1,8 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { useBlurIn } from "Hooks/useBlurIn";
 
 export const BlurIn = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll();
-
-  const opacity = useTransform(scrollYProgress, [0, 0.02], [1, 0]);
+  const { ref, opacity } = useBlurIn();
 
   return (
     <motion.p

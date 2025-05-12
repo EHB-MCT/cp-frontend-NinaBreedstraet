@@ -287,3 +287,46 @@
 .slider {
   margin-left: 3.5rem;
 }
+
+.searchOverlay {
+  position: absolute;
+  top: 5.5rem;
+  left: 61rem;
+  width: 20%;
+  font-weight: lighter;
+  padding: 1rem;
+  z-index: 1000;
+  border: none;
+  border-radius: 70px;
+
+  input {
+    width: 100%;
+    background: lightgrey;
+    border: none;
+    color: black;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: lighter;
+    border-radius: 70px;
+  }
+}
+
+.searchIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: lightgrey;
+  font-weight: lighter;
+  position: absolute;
+  top: 6.7rem;
+  left: 82rem;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.inputSearchBar {
+  font-family: "Helvetica";
+  font-weight: lighter;
+}

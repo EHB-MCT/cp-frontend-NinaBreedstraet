@@ -1,10 +1,12 @@
-// hooks/useBlurIn.ts
 import { useRef } from "react";
-import { useScroll, useTransform } from "framer-motion";
+import { MotionValue, useScroll, useTransform } from "framer-motion";
 
-export const useBlurIn = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
+export const useBlurIn = (): {
+  ref: React.RefObject<HTMLParagraphElement>;
+  opacity: MotionValue<number>;
+} => {
+  const ref = useRef<HTMLParagraphElement>(null!);
+  const { scrollYProgress } = useScroll();
 
   const opacity = useTransform(scrollYProgress, [0, 0.02], [1, 0]);
 

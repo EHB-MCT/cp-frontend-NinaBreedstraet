@@ -1,7 +1,4 @@
-import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
-import SearchFilter from "components/SearchFilter";
-import { useSearch } from "Hooks/useSearch";
 
 const Footer = () => {
   return (

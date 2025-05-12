@@ -1,22 +1,17 @@
-import { useRef} from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-
+import { motion } from "framer-motion";
+import { useBlurOut } from "Hooks/useBlurOut";
 
 export const BlurOut2 = ({ children }: { children: React.ReactNode }) => {
-    const ref = useRef(null);
+  const { ref, opacityTwo } = useBlurOut();
 
-    const { scrollYProgress } = useScroll();
-
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.3, 0.5], [0, 0.1, 1, 0]);
-    
-    return (
-      <motion.p
-        ref={ref}
-        style={{ opacity: opacity }} 
-        transition={{ duration: 9.2 }}
-        className="text"
-      >
-        {children}
-      </motion.p>
-    );
-  };
+  return (
+    <motion.p
+      ref={ref}
+      style={{ opacity: opacityTwo }}
+      transition={{ duration: 9.2 }}
+      className="text"
+    >
+      {children}
+    </motion.p>
+  );
+};

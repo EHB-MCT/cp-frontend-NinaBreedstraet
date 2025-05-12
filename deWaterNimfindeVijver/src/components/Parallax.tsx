@@ -1,39 +1,22 @@
 import { BlurIn } from "./BlurIn";
 import { BlurOut } from "./BlurOut";
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import { BlurOut2 } from "./BlurOut2";
-import { ScrollScene2 } from "./ScrollScene2";
-
+import { ScrollScene2 } from "./Scenes/ScrollScene2";
+import { useBlurOut } from "Hooks/useBlurOut";
+import { useGrass } from "Hooks/useGrass";
 
 export const Parallax = () => {
-  const grassRef = useRef(null);
-  const textRef = useRef(null);
-  const backgroundRef = useRef(null);
-
-  const { scrollYProgress } = useScroll();
-
-  const { scrollYProgress: grassScrollY } = useScroll({
-    target: grassRef,
-    offset: ["start end", "end start"]
-  });
-
-  const { scrollYProgress: textScrollY } = useScroll({
-    target: textRef,
-    offset: ["start end", "end start"]
-  });
-
-  const grassY = useTransform(grassScrollY, [0.2, 0.5], [0, -50]);
-  const textY = useTransform(textScrollY, [0.5, 1], [0, -150]);
-  const blurAmount = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.5], [2, 0, 0, 2]);
+  const { opacityThree } = useBlurOut();
+  const { ref, grassY, textY, blurAmount } = useGrass();
 
   return (
     <div className="container">
-      <div className="scene1 relative" >
-       <motion.div
-          ref={backgroundRef}
+      <div className="scene1 relative">
+        <motion.div
+          ref={ref}
           className="background"
-          style={{ position:"sticky", top:"0", overflow: "hidden" }}
+          style={{ position: "sticky", top: "0", overflow: "hidden" }}
         >
           <motion.img
             src="/back1.png"
@@ -41,7 +24,7 @@ export const Parallax = () => {
             className="BG1"
             style={{
               filter: useTransform(blurAmount, (value) => `blur(${value}px)`),
-              position: "sticky", 
+              position: "sticky",
               top: 0,
               left: 0,
               width: "100%",
@@ -52,20 +35,20 @@ export const Parallax = () => {
             transition={{ duration: 0.2 }}
           />
         </motion.div>
-        
-        <motion.div className="grass" ref={grassRef} style={{ y: grassY }}>
+
+        <motion.div className="grass" ref={ref} style={{ y: grassY }}>
           <img src="/grass1.png" alt="Grass Layer 1" className="grass-image1" />
           <img src="/grass2.png" alt="Grass Layer 2" className="grass-image2" />
         </motion.div>
 
-        <motion.div className="text-container" ref={textRef} style={{ y: textY }}>
+        <motion.div className="text-container" ref={ref} style={{ y: textY }}>
           <BlurOut>
-            De vader van een jager beloofde zijn zoon aan de nimf te geven in ruil
-            voor voorspoed, maar verzweeg dit voor zijn vrouw...
+            De vader van een jager beloofde zijn zoon aan de nimf te geven in
+            ruil voor voorspoed, maar verzweeg dit voor zijn vrouw...
           </BlurOut>
         </motion.div>
 
-        <motion.div className="text-container2" ref={textRef} style={{ y: textY }}>
+        <motion.div className="text-container2" ref={ref} style={{ y: textY }}>
           <BlurOut2>
             Wanneer de zoon volwassen is, trekt de nimf hem de vijver in...
           </BlurOut2>
@@ -76,20 +59,19 @@ export const Parallax = () => {
         </div>
       </div>
 
-      <motion.div 
+      <motion.div
         className="scene2"
         initial={{ opacity: 0 }}
-        style={{ 
-          opacity: useTransform(
-            scrollYProgress, 
-            [0.1, 0.9],
-            [1, 1]
-          ),
+        style={{
+          opacity: opacityThree,
         }}
       >
-        <ScrollScene2 children={undefined}/>
+        <BlurOut2>
+          De vrouw van de zoon probeert hem tevergeefs te helpen en ze droomt
+          over een oude vrouw in een hutje in de bergen.
+        </BlurOut2>
+        <ScrollScene2 children={undefined} />
       </motion.div>
     </div>
-  
   );
 };

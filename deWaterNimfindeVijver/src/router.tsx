@@ -1,16 +1,11 @@
-import {
-  createBrowserRouter,
-  Outlet,
-  Router,
-  RouterProvider,
-} from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import Navigation from "./components/PortaalComponents/Navigation/Navigation";
 import LandingsPagina from "./Pages/LandingsPagina";
 import Home from "./Pages/Home";
 import About from "Pages/About";
 import MakingOf from "Pages/MakingOf";
 import MakingOfMeer from "Pages/MakingOfMeer";
-import Footer from "components/Footer/Footer";
+import Footer from "components/PortaalComponents/Footer/Footer";
 
 const router = createBrowserRouter([
   {

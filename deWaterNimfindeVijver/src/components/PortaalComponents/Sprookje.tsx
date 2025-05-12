@@ -1,5 +1,5 @@
 // import LandingsPagina from "./Landingspagina";
-import styles from "../Pages/Styles.module.scss";
+import styles from "../../Pages/Styles.module.scss";
 
 type SprookjeContentProps = {
   img: string;

@@ -1,5 +1,5 @@
 // import LandingsPagina from "./Landingspagina";
-import { Slider } from "components/Slider/Slider";
+import { Slider } from "components/PortaalComponents/Slider/Slider";
 import styles from "../Pages/Styles.module.scss";
 import DATA from "data.json";
 import { useState } from "react";

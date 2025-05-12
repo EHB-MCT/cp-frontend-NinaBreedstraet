@@ -1,5 +1,5 @@
-import SearchFilter from "components/SearchFilter";
-import { useSearch } from "../Hooks/useSearch"; // of jouw juiste path
+import SearchFilter from "components/PortaalComponents/SearchFilter";
+import { useSearch } from "../../Hooks/useSearch"; // of jouw juiste path
 
 function SearchItem() {
   const { searchTerm, setSearchTerm, filteredItems } = useSearch();
