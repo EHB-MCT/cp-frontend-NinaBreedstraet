@@ -2,7 +2,7 @@ import { BlurIn } from "./BlurIn";
 import { BlurOut } from "./BlurOut";
 import { motion, useTransform } from "framer-motion";
 import { BlurOut2 } from "./BlurOut2";
-import { ScrollScene2 } from "./Scenes/ScrollScene2";
+import { ScrollScene2 } from "../Scenes/ScrollScene2";
 import { useBlurOut } from "Hooks/useBlurOut";
 import { useGrass } from "Hooks/useGrass";
 

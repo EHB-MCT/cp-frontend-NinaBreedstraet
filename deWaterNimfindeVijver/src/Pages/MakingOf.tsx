@@ -3,6 +3,7 @@ import styles from "../Pages/Styles.module.scss";
 import { IoEyeOutline } from "react-icons/io5";
 import { useParams } from "react-router";
 import DATA from "../data.json";
+import { FiSearch } from "react-icons/fi";
 
 function MakingOf() {
   const { id } = useParams();
@@ -11,8 +12,14 @@ function MakingOf() {
   if (!sprookje) {
     return <div>Sprookje niet gevonden!</div>;
   }
+
+  const icon = FiSearch({ size: 24, color: "black" });
+
   return (
     <div className={styles.containerMakingOf}>
+      <a className={styles.searchIcon} href="/home">
+        {icon}
+      </a>
       <h2>Making off</h2>
       <div
         className={styles.header}
