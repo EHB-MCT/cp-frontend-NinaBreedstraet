@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from "react-router";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import Navigation from "./components/PortaalComponents/Navigation/Navigation";
 import LandingsPagina from "./Pages/LandingsPagina";
 import Home from "./Pages/Home";
@@ -19,6 +19,7 @@ const router = createBrowserRouter([
       </FilterProvider>
     ),
     children: [
+      { index: true, element: <Home /> },
       {
         path: "/home",
         element: <Home />,
