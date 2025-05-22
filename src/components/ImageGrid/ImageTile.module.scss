@@ -1,0 +1,35 @@
+.tile {
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
+}
+
+.roundedFull {
+  border-radius: 10%;
+}
+
+.roundedTopLeftLarge {
+  border-top-left-radius: 50%;
+}
+
+.roundedTopRightLarge {
+  border-top-right-radius: 50%;
+}
+
+.roundedBottomRightLarge {
+  border-bottom-right-radius: 50%;
+}
+
+.roundedBottomLeftLarge {
+  border-bottom-left-radius: 50%;
+}
+
+.gridContainer {
+  position: relative;
+  width: 100%;
+  min-width: 700px;
+  height: 80vh;
+  top: -5rem;
+}
