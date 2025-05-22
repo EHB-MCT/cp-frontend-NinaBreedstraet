@@ -2,30 +2,39 @@
 import styles from "../Pages/Styles.module.scss";
 import { useState } from "react";
 import "@splidejs/splide/dist/css/splide.min.css";
-import DATA from "../data.json";
 import SprookjeStories from "../components/PortaalComponents/SprookjeStories";
 import { Slider } from "../components/PortaalComponents/Slider/Slider";
 import { useSearch } from "../hooks/useSearch";
 import SearchFilter from "../components/PortaalComponents/SearchFilter";
 import { FiSearch } from "react-icons/fi";
 import { useFilter } from "../components/PortaalComponents/FilterDropDown";
+import { useFairytaleCards } from "../hooks/useFairyTales";
 
 function Home() {
   const { searchTerm, setSearchTerm } = useSearch();
   const [showSearch, setShowSearch] = useState(false);
   const { genreFilter } = useFilter();
   const icon = FiSearch({ size: 24, color: "black" });
+  const { data } = useFairytaleCards();
 
-  const sprookjesslider = DATA.filter((sprookjes) =>
-    sprookjes.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const sprookjesslider = data.filter((sprookjes) =>
+    sprookjes.fairytale.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const filteredSprookjes = DATA.filter((item) => {
-    const matchesSearch = item.title
+  // const sprookjesslider: Sprookje[] = data.map((item) => ({
+  //   id: item.id,
+  //   imgThumbnail: item.imgThumbnail,
+  //   nameStudent: item.nameStudent,
+  //   fairytale: item.fairytale,
+  //   genre: item.genre,
+  // }));
+
+  const filteredSprookjes = data.filter((item) => {
+    const matchesSearch = item.fairytale
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
     const matchesGenre =
-      !genreFilter || item.Genre.toLowerCase() === genreFilter.toLowerCase();
+      !genreFilter || item.genre.toLowerCase() === genreFilter.toLowerCase();
     return matchesSearch && matchesGenre;
   });
 
@@ -54,10 +63,10 @@ function Home() {
           {filteredSprookjes.map((item) => (
             <SprookjeStories
               key={item.id}
-              img={item.img}
-              name={item.name}
-              title={item.title}
-              genre={item.Genre}
+              img={item.imgThumbnail}
+              name={item.nameStudent}
+              title={item.fairytale}
+              genre={item.genre}
               link={`/cp-frontend-NinaBreedstraet/making-of/${item.id}`}
             />
           ))}

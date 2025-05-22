@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/cp-frontend-NinaBreedstraet/sprookje",
+    path: "/cp-frontend-NinaBreedstraet/deWaternimfInDeVijver",
     element: <LandingsPagina />,
   },
 ]);

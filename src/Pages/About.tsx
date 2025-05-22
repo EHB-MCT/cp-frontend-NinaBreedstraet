@@ -1,15 +1,16 @@
 // import LandingsPagina from "./Landingspagina";
 import { Slider } from ".././components/PortaalComponents/Slider/Slider";
 import styles from "../Pages/Styles.module.scss";
-import DATA from "../data.json";
 import { useState } from "react";
 import ImageGrid from ".././components/ImageGrid/ImageGrid";
 import { FiSearch } from "react-icons/fi";
+import { useFairytaleCards } from "../hooks/useFairyTales";
 
 function About() {
   const [searchTerm] = useState("");
+  const { data } = useFairytaleCards();
 
-  const filteredSprookjes = DATA.filter((sprookjes) =>
+  const filteredSprookjes = data.filter((sprookjes) =>
     sprookjes.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 

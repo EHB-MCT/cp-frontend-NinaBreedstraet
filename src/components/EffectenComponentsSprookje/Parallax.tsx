@@ -30,7 +30,7 @@ export const Parallax = () => {
           }}
         >
           <motion.img
-            src="/cp-frontend-NinaBreedstraet/back1.png"
+            src="/cp-frontend-NinaBreedstraet/back1.jpeg"
             alt="Achtergrond"
             className="BG1"
             style={{

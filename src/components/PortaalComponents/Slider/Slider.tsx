@@ -3,12 +3,12 @@ import styles from "./Slider.module.scss";
 import Splide from "@splidejs/splide";
 import { SlArrowLeftCircle, SlArrowRightCircle } from "react-icons/sl";
 
-type Sprookje = {
+export type Sprookje = {
   id: string;
-  img: string;
-  name: string;
-  title: string;
-  Genre: string;
+  imgThumbnail: string;
+  nameStudent: string;
+  fairytale: string;
+  genre: string;
 };
 
 type SliderProps = {
@@ -17,9 +17,9 @@ type SliderProps = {
 
 function getRandomPairs(arr: Sprookje[], slidesCount = 3) {
   const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  const pairs = [];
+  const pairs: Sprookje[][] = [];
   for (let i = 0; i < slidesCount * 2 && i < shuffled.length; i += 2) {
-    pairs.push([shuffled[i], shuffled[i + 1]].filter(Boolean));
+    pairs.push([shuffled[i], shuffled[i + 1]].filter(Boolean) as Sprookje[]);
   }
   return pairs;
 }
@@ -29,16 +29,27 @@ export const Slider = ({ sprookjesData }: SliderProps) => {
   const pairs = getRandomPairs(sprookjesData, 3);
 
   useEffect(() => {
+    if (splideRef.current) {
+      splideRef.current.destroy();
+    }
+
     const splide = new Splide("#image-slider", {
       type: "loop",
       perPage: 1,
+      focus: "center",
       autoplay: true,
       pagination: false,
       arrows: false,
     }).mount();
 
     splideRef.current = splide;
-  }, []);
+
+    return () => {
+      if (splideRef.current) {
+        splideRef.current.destroy();
+      }
+    };
+  }, [pairs]);
 
   const handlePrev = () => {
     splideRef.current?.go("<");
@@ -71,18 +82,21 @@ export const Slider = ({ sprookjesData }: SliderProps) => {
                       className={styles.sprookjeDeel}
                     >
                       <div className={styles.imgSprookje}>
-                        <img src={sprookje.img} alt={sprookje.title} />
+                        <img
+                          src={sprookje.imgThumbnail}
+                          alt={sprookje.fairytale}
+                        />
                       </div>
                       <div className={styles.container}>
                         <div className={styles.info}>
                           <h1 className={styles.nameSprookje}>
-                            {sprookje.name}
+                            {sprookje.nameStudent}
                           </h1>
                           <p className={styles.titleSprookje}>
-                            {sprookje.title}
+                            {sprookje.fairytale}
                           </p>
                           <p className={styles.genreSprookje}>
-                            {sprookje.Genre}
+                            {sprookje.genre}
                           </p>
                         </div>
                         <div className={styles.link}>
@@ -96,53 +110,6 @@ export const Slider = ({ sprookjesData }: SliderProps) => {
             ))}
           </ul>
         </div>
-
-        {/* <div className="splide__track">
-          <ul className="splide__list">
-            <li className={styles.splide__slide}>
-              <div className={styles.sprookjeDeelContainer}>
-                <a href="./sprookje" className={styles.sprookjeDeel}>
-                  Pagina
-                </a>
-                <a href="./sprookje" className={styles.sprookjeDeel}>
-                  Pagina
-                </a>
-              </div>
-            </li>
-            <li className="splide__slide">
-              <div className={styles.sprookjeDeelContainer}>
-                <a href="./sprookje" className={styles.sprookjeDeel}>
-                  <div className={styles.imgSprookje}>
-                    <img src="/Waternimf.png" alt="Sprookje" />
-                  </div>
-                  <div className={styles.container}>
-                    <div className={styles.info}>
-                      <h1 className={styles.nameSprookje}>lalala</h1>
-                      <p className={styles.titleSprookje}>papapapa</p>
-                      <p className={styles.genreSprookje}>dadadada</p>
-                    </div>
-                    <div className={styles.link}>
-                      <a href="./sprookje">&rarr;</a>
-                    </div>
-                  </div>
-                </a>
-                <a href="./sprookje" className={styles.sprookjeDeel}>
-                  Pagina
-                </a>
-              </div>
-            </li>
-            <li className="splide__slide">
-              <div className={styles.sprookjeDeelContainer}>
-                <a href="./sprookje" className={styles.sprookjeDeel}>
-                  Pagina
-                </a>
-                <a href="./sprookje" className={styles.sprookjeDeel}>
-                  Pagina
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div> */}
       </div>
     </div>
   );
