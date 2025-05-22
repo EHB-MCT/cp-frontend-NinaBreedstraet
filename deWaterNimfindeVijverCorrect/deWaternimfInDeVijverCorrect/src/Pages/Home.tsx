@@ -58,7 +58,7 @@ function Home() {
               name={item.name}
               title={item.title}
               genre={item.Genre}
-              link={`/making-of/${item.id}`}
+              link={`/cp-frontend-NinaBreedstraet/making-of/${item.id}`}
             />
           ))}
         </ul>

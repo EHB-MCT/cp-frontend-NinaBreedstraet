@@ -11,13 +11,16 @@ const Navigation = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.links}>
-        <Link to="/Home">
-          <img src="/Logo er was eens_Versie2.png" alt="lalala" />
+        <Link to="/cp-frontend-NinaBreedstraet/Home">
+          <img
+            src="/cp-frontend-NinaBreedstraet/Logo er was eens_Versie2.png"
+            alt="lalala"
+          />
         </Link>
       </div>
 
       <div className={styles.rechts}>
-        <Link to="/home">
+        <Link to="/cp-frontend-NinaBreedstraet/home">
           <select
             className={styles.genreDropdown}
             value={genreFilter}
@@ -31,8 +34,8 @@ const Navigation = () => {
             ))}
           </select>
         </Link>
-        <Link to="/making-of/1">MAKING OF</Link>
-        <Link to="/about">ABOUT US</Link>
+        <Link to="/cp-frontend-NinaBreedstraet/making-of/1">MAKING OF</Link>
+        <Link to="/cp-frontend-NinaBreedstraet/about">ABOUT US</Link>
       </div>
     </nav>
   );

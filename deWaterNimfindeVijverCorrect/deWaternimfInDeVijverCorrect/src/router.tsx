@@ -10,7 +10,7 @@ import { FilterProvider } from "./components/PortaalComponents/FilterDropDown";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/cp-frontend-NinaBreedstraet",
     element: (
       <FilterProvider>
         <Navigation />
@@ -21,25 +21,25 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       {
-        path: "/home",
+        path: "home",
         element: <Home />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/making-of/:id",
+        path: "making-of/:id",
         element: <MakingOf />,
       },
       {
-        path: "/making-of-meer/:id",
+        path: "making-of-meer/:id",
         element: <MakingOfMeer />,
       },
     ],
   },
   {
-    path: "/sprookje",
+    path: "/cp-frontend-NinaBreedstraet/sprookje",
     element: <LandingsPagina />,
   },
 ]);

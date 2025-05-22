@@ -5,7 +5,10 @@ const Footer = () => {
     <footer>
       <div className={styles.footer}>
         <div className={styles.logo}>
-          <img src="/Logo er was eens_Versie2.png" alt="" />
+          <img
+            src="/cp-frontend-NinaBreedstraet/Logo er was eens_Versie2.png"
+            alt=""
+          />
         </div>
         <div className={styles.aboutFooter}>
           <p>
@@ -15,7 +18,10 @@ const Footer = () => {
             hier al hun sprookjes. Benieuwd wie ze zijn?
           </p>
           <div>
-            <a className={styles.buttonFooter} href="/About">
+            <a
+              className={styles.buttonFooter}
+              href="/cp-frontend-NinaBreedstraet/About"
+            >
               About us
             </a>
           </div>

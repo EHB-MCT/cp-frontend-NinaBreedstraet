@@ -67,7 +67,7 @@ export const Slider = ({ sprookjesData }: SliderProps) => {
                   {pair.map((sprookje) => (
                     <a
                       key={sprookje.id}
-                      href={`/making-of/${sprookje.id}`}
+                      href={`/cp-frontend-NinaBreedstraet/making-of/${sprookje.id}`}
                       className={styles.sprookjeDeel}
                     >
                       <div className={styles.imgSprookje}>

@@ -12,22 +12,26 @@ export const ScrollScene2 = () => {
 
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.4, 0.5, 0.6],
+    [0, 0.01, 0.1, 0.3],
     [0, 1, 1, 0]
   );
 
+  const blurAmount = useTransform(
+    scrollYProgress,
+    [0, 0.1, 0.2, 0.5],
+    [0, 0, 0, 1]
+  );
+
   const grassY = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  // const foxY = useTransform(scrollYProgress, [0, 1], [100, 0]);
 
   return (
     <section
       ref={sceneRef}
       style={{
         position: "relative",
-        height: "150vh",
+        height: "160vh",
         marginTop: "-80vh",
         zIndex: 0,
-        background: "rgba(255,0,0,0.5)",
       }}
     >
       <div
@@ -48,12 +52,13 @@ export const ScrollScene2 = () => {
           }}
         >
           <motion.img
-            src="/forest3.png"
+            src="/cp-frontend-NinaBreedstraet/forest4.png"
             style={{
               position: "absolute",
               top: "-14vh",
               left: 0,
               objectFit: "cover",
+              filter: useTransform(blurAmount, (value) => `blur(${value}px)`),
               y: grassY,
               zIndex: 0,
             }}
@@ -61,11 +66,11 @@ export const ScrollScene2 = () => {
         </motion.div>
 
         <motion.img
-          src="/fox.png"
+          src="/cp-frontend-NinaBreedstraet/fox.png"
           style={{
             opacity,
             position: "absolute",
-            top: "30vh",
+            top: "10vh",
             bottom: "20vh",
             left: "65%",
             width: "28%",
@@ -74,11 +79,11 @@ export const ScrollScene2 = () => {
         />
 
         <motion.img
-          src="/fox2.png"
+          src="/cp-frontend-NinaBreedstraet/fox2.png"
           style={{
             opacity,
             position: "absolute",
-            top: "46vh",
+            top: "33vh",
             left: "60%",
             width: "15%",
             zIndex: 3,

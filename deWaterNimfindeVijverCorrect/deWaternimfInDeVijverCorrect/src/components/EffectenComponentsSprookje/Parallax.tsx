@@ -5,6 +5,7 @@ import { BlurOut2 } from "./BlurOut2";
 import { ScrollScene2 } from "../Scenes/ScrollScene2";
 import { useGrass } from "../../hooks/useGrass";
 import { ScrollScene3 } from "../../components/Scenes/ScrollScene3";
+import "../../index.scss";
 
 export const Parallax = () => {
   const { ref, grassY, textY, blurAmount } = useGrass();
@@ -29,7 +30,7 @@ export const Parallax = () => {
           }}
         >
           <motion.img
-            src="/back1.png"
+            src="/cp-frontend-NinaBreedstraet/back1.png"
             alt="Achtergrond"
             className="BG1"
             style={{
@@ -47,8 +48,16 @@ export const Parallax = () => {
         </motion.div>
 
         <motion.div className="grass" ref={ref} style={{ y: grassY }}>
-          <img src="/grass1.png" alt="Grass Layer 1" className="grass-image1" />
-          <img src="/grass2.png" alt="Grass Layer 2" className="grass-image2" />
+          <img
+            src="/cp-frontend-NinaBreedstraet/Grass1.png"
+            alt="Grass Layer 1"
+            className="grass-image1"
+          />
+          <img
+            src="/cp-frontend-NinaBreedstraet/Grass2.png"
+            alt="Grass Layer 2"
+            className="grass-image2"
+          />
         </motion.div>
 
         <motion.div className="text-container" ref={ref} style={{ y: textY }}>

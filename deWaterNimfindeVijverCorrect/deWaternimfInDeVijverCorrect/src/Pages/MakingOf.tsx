@@ -16,7 +16,7 @@ function MakingOf() {
 
   return (
     <div className={styles.containerMakingOf}>
-      <a className={styles.searchIcon} href="/home">
+      <a className={styles.searchIcon} href="/cp-frontend-NinaBreedstraet/home">
         {icon}
       </a>
       <h2>Making off</h2>
@@ -46,7 +46,7 @@ function MakingOf() {
           <p className={styles.storyParagraph}>{sprookje.Genre}</p>
           <a
             className={styles.buttonFooter}
-            href={`/making-of-meer/${sprookje.id}`}
+            href={`/cp-frontend-NinaBreedstraet/making-of-meer/${sprookje.id}`}
           >
             Lees meer
           </a>

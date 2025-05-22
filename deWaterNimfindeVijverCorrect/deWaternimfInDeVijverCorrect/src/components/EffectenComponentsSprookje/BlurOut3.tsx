@@ -8,10 +8,10 @@ interface Props {
 export const BlurOut3 = ({ scrollYProgress, children }: Props) => {
   const opacity = useTransform(
     scrollYProgress,
-    [0.15, 0.25, 0.65, 0.75],
+    [0, 0.01, 0.1, 0.3],
     [0, 1, 1, 0]
   );
-  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const y = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
 
   return (
     <motion.p

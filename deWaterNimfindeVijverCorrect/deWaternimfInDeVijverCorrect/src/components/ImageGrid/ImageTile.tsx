@@ -31,7 +31,7 @@ export default function ImageTile({
       }}
     >
       <img
-        src={src}
+        src={`/cp-frontend-NinaBreedstraet/${src}`}
         alt=""
         style={{
           width: "100%",

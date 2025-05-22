@@ -17,7 +17,7 @@ function About() {
 
   return (
     <div>
-      <a className={styles.searchIcon} href="/home">
+      <a className={styles.searchIcon} href="/cp-frontend-NinaBreedstraet/home">
         {icon}
       </a>
       <div className={styles.sectionAbout}>
