@@ -5,6 +5,7 @@ import { BlurOut2 } from "./BlurOut2";
 import { ScrollScene2 } from "../Scenes/ScrollScene2";
 import { useGrass } from "../../hooks/useGrass";
 import { ScrollScene3 } from "../../components/Scenes/ScrollScene3";
+import { ScrollScene4 } from "../../components/Scenes/ScrollScene4";
 import "../../index.scss";
 
 export const Parallax = () => {
@@ -85,6 +86,8 @@ export const Parallax = () => {
       <div className="scene3">
         <ScrollScene3 />
       </div>
+
+      <ScrollScene4 />
     </div>
   );
 };

@@ -29,7 +29,7 @@ export const ScrollScene2 = () => {
       ref={sceneRef}
       style={{
         position: "relative",
-        height: "160vh",
+        height: "200vh",
         marginTop: "-80vh",
         zIndex: 0,
       }}

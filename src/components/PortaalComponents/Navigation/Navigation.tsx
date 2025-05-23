@@ -1,12 +1,13 @@
 import { Link } from "react-router";
 import styles from "./Navigation.module.scss";
 import { useFilter } from "../FilterDropDown";
-import DATA from "../../../data.json";
+import { useFairytaleCards } from "../../../hooks/useFairyTales";
 
 const Navigation = () => {
   const { genreFilter, setGenreFilter } = useFilter();
+  const { data } = useFairytaleCards();
 
-  const genres = Array.from(new Set(DATA.map((item) => item.Genre)));
+  const genres = Array.from(new Set(data.map((item) => item.genre)));
 
   return (
     <nav className={styles.nav}>

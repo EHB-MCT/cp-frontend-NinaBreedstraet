@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <a
               className={styles.buttonFooter}
-              href="/cp-frontend-NinaBreedstraet/About"
+              href="/cp-frontend-NinaBreedstraet/about"
             >
               About us
             </a>
