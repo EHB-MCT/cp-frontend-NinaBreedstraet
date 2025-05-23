@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BlurOut3 } from "../EffectenComponentsSprookje/BlurOut3";
 import { BlurOut4 } from "../EffectenComponentsSprookje/BlurOut4";
-import { BlurOut5 } from "../EffectenComponentsSprookje/BlurOut5";
 
 export const ScrollScene3 = () => {
   const sceneRef = useRef<HTMLElement>(null);
