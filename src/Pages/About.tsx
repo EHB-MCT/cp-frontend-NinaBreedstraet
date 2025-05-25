@@ -1,7 +1,7 @@
 import { Slider } from ".././components/PortaalComponents/Slider/Slider";
 import styles from "../Pages/Styles.module.scss";
 import { useState } from "react";
-import ImageGrid from ".././components/ImageGrid/ImageGrid";
+import ImageGrid from "../components/PortaalComponents/ImageGrid/ImageGrid";
 import { FiSearch } from "react-icons/fi";
 import { useFairytaleCards } from "../hooks/useFairyTales";
 
