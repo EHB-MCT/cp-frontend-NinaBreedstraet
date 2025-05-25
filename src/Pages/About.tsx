@@ -10,7 +10,7 @@ function About() {
   const { data } = useFairytaleCards();
 
   const filteredSprookjes = data.filter((sprookjes) =>
-    sprookjes.title.toLowerCase().includes(searchTerm.toLowerCase())
+    sprookjes.fairytale.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const icon = FiSearch({ size: 24, color: "black" });
@@ -24,8 +24,8 @@ function About() {
         <div className={styles.part1}>
           <h2 className={styles.titel1}>About</h2>
           <p className={styles.tekstAbout}>
-            EHB-studenten Fron-End Development werken dit semester met react aan
-            een parallax websiote rond het thema sprookjes.
+            EHB-studenten Front-End Development werken dit semester met react
+            aan een parallax website rond het thema sprookjes.
             <br></br>
             <br></br>
             Ze combineren techniek en creativiteit om een interactieve

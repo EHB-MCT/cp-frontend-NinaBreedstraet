@@ -35,7 +35,9 @@ const Navigation = () => {
             ))}
           </select>
         </Link>
-        <Link to="/cp-frontend-NinaBreedstraet/making-of/1">MAKING OF</Link>
+        <Link to="/cp-frontend-NinaBreedstraet/making-of/nina-breedstraet-de-waternimf-in-de-vijver">
+          MAKING OF
+        </Link>
         <Link to="/cp-frontend-NinaBreedstraet/about">ABOUT US</Link>
       </div>
     </nav>
