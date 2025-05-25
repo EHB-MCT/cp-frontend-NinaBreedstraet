@@ -1,4 +1,4 @@
-import { Parallax } from ".././components/EffectenComponentsSprookje/Parallax";
+import { Parallax } from "../components/Scenes/Parallax";
 import styles from "./Styles.module.scss";
 
 function LandingsPagina() {

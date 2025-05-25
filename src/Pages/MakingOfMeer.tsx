@@ -1,10 +1,12 @@
 import styles from "../Pages/Styles.module.scss";
 import { useParams } from "react-router";
-import DATA from "../data.json";
+import { useFairytaleCards } from "../hooks/useFairyTales";
 
 function MakingOfMeer() {
   const { id } = useParams();
-  const sprookje = DATA.find((item) => item.id === id);
+  const { data } = useFairytaleCards();
+
+  const sprookje = data.find((item) => item.id === id);
 
   if (!sprookje) {
     return <div>Sprookje niet gevonden!</div>;
@@ -15,7 +17,7 @@ function MakingOfMeer() {
       <div
         className={styles.header}
         style={{
-          backgroundImage: `url(${sprookje.picture1})`,
+          backgroundImage: `url(${sprookje.imgBanner})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           width: "76.8rem",
@@ -25,18 +27,24 @@ function MakingOfMeer() {
         }}
       >
         <div className={styles.nameAndTitle}>
-          <h1 className={styles.title}>{sprookje.title}</h1>
-          <p className={styles.name}>{sprookje.name}</p>
+          <h1 className={styles.title}>{sprookje.fairytale}</h1>
+          <p className={styles.name}>{sprookje.nameStudent}</p>
         </div>
       </div>
       <div className={styles.story}>
         <div>
           <h3 className={styles.storyTitle}>Verhaal</h3>
-          <p className={styles.storyParagraph}>{sprookje.leesMeer}</p>
+          <p className={styles.storyParagraph}>{sprookje.description}</p>
+          <h3 className={styles.storyTitle}>Parallax</h3>
+          <p className={styles.storyParagraph}>{sprookje.parallaxInfo}</p>
           <h3 className={styles.storyTitle}>Auteur</h3>
-          <p className={styles.storyParagraph}>{sprookje.auteur}</p>
-          <p className={styles.storyParagraph}>{sprookje.Genre}</p>
-          <a className={styles.buttonFooter} href={`/making-of/${sprookje.id}`}>
+          <p className={styles.storyParagraph}>{sprookje.fairytaleAuthor}</p>
+          <h3 className={styles.storyTitle}>Genre</h3>
+          <p className={styles.storyParagraph}>{sprookje.genre}</p>
+          <a
+            className={styles.buttonFooter}
+            href={`/cp-frontend-NinaBreedstraet/making-of/${sprookje.id}`}
+          >
             Lees minder
           </a>
         </div>
@@ -44,12 +52,12 @@ function MakingOfMeer() {
       <div className={styles.extraInfo}>
         <h2>Extra info</h2>
         <div className={styles.images}>
-          <img src={sprookje.extraInfoPic1} alt="" />
-          <img src={sprookje.extraInfoPic2} alt="" />
-          <img src={sprookje.extraInfoPic3} alt="" />
+          <img src={sprookje.imgsExtra[0]} alt="" />
+          <img src={sprookje.imgsExtra[1]} alt="" />
+          <img src={sprookje.imgsExtra[2]} alt="" />
         </div>
         <div className={styles.extraInfoText}>
-          <p>{sprookje.extraInfo}</p>
+          <p>{sprookje.imgsInfo}</p>
         </div>
       </div>
     </div>

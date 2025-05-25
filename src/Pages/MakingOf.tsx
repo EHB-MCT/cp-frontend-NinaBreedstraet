@@ -55,8 +55,8 @@ function MakingOf() {
         </div>
 
         <div className={styles.pictureLink}>
-          <img src={sprookje.imgsExtra[3]} className={styles.pictures} alt="" />
-          <a href={sprookje.link}>{IoEyeOutline({})} View Website</a>
+          <img src={sprookje.imgsExtra[2]} className={styles.pictures} alt="" />
+          <a href={sprookje.fairytaleLink}>{IoEyeOutline({})} View Website</a>
         </div>
       </div>
       <div className={styles.extraInfo}>
@@ -66,8 +66,14 @@ function MakingOf() {
           <img src={sprookje.imgsExtra[1]} alt="" />
           <img src={sprookje.imgsExtra[2]} alt="" />
         </div>
-        <div className={styles.extraInfoText}>
-          <p>{sprookje.extraInfo}</p>
+        <div
+          className={styles.extraInfoText}
+          style={{
+            width: "63rem",
+            marginBottom: "2rem",
+          }}
+        >
+          <p>{sprookje.imgsInfo}</p>
         </div>
       </div>
     </div>

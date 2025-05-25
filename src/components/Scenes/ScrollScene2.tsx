@@ -1,28 +1,11 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { BlurOut3 } from "../../components/EffectenComponentsSprookje/BlurOut3";
+import { useBlurOutScene2 } from "../../hooks/useScene2";
+import { motion } from "framer-motion";
 
 export const ScrollScene2 = () => {
-  const sceneRef = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sceneRef,
-    offset: ["start start", "end end"],
-  });
-
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.01, 0.1, 0.3],
-    [0, 1, 1, 0]
-  );
-
-  const blurAmount = useTransform(
-    scrollYProgress,
-    [0, 0.1, 0.2, 0.5],
-    [0, 0, 0, 1]
-  );
-
-  const grassY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const { blurFilter, grassY, opacity, scrollYProgress, sceneRef } =
+    useBlurOutScene2();
+  // const sceneRef = useRef<HTMLElement>(null);
 
   return (
     <section
@@ -55,10 +38,10 @@ export const ScrollScene2 = () => {
             src="/cp-frontend-NinaBreedstraet/forest4.png"
             style={{
               position: "absolute",
-              top: "-14vh",
+              top: "-18vh",
               left: 0,
               objectFit: "cover",
-              filter: useTransform(blurAmount, (value) => `blur(${value}px)`),
+              filter: blurFilter,
               y: grassY,
               zIndex: 0,
             }}

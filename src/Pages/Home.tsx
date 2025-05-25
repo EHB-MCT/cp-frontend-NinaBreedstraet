@@ -21,14 +21,6 @@ function Home() {
     sprookjes.fairytale.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // const sprookjesslider: Sprookje[] = data.map((item) => ({
-  //   id: item.id,
-  //   imgThumbnail: item.imgThumbnail,
-  //   nameStudent: item.nameStudent,
-  //   fairytale: item.fairytale,
-  //   genre: item.genre,
-  // }));
-
   const filteredSprookjes = data.filter((item) => {
     const matchesSearch = item.fairytale
       .toLowerCase()

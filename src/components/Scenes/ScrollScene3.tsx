@@ -1,50 +1,65 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { BlurOut3 } from "../EffectenComponentsSprookje/BlurOut3";
+import { motion } from "framer-motion";
 import { BlurOut4 } from "../EffectenComponentsSprookje/BlurOut4";
+import { BlurOut8 } from "../EffectenComponentsSprookje/BlurOut8";
+import { useBlurOutScene3 } from "../../hooks/useScene3";
 
 export const ScrollScene3 = () => {
-  const sceneRef = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sceneRef,
-    offset: ["start start", "end end"],
-  });
-
-  const fishX = useTransform(scrollYProgress, [0.8, 1], ["-20%", "300%"]);
-
-  const grassY = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-
-  const blurAmount = useTransform(
+  // const sceneRef = useRef<HTMLElement>(null);
+  const {
+    blurFilter,
+    sceneRef,
+    grassY,
+    fishX,
     scrollYProgress,
-    [0, 0.1, 0.2, 0.5],
-    [1, 0, 0, 0]
-  );
+    img1Y,
+    img2Y,
+    img3Y,
+    img1Opacity,
+    img2Opacity,
+    img3Opacity,
+    woman,
+    womanOpacity,
+  } = useBlurOutScene3();
 
-  const img1Opacity = useTransform(
-    scrollYProgress,
-    [0.01, 0.11, 0.21],
-    [0, 1, 0]
-  );
-  const img1Y = useTransform(scrollYProgress, [0.01, 0.21], [50, 0]);
-  const img2Opacity = useTransform(
-    scrollYProgress,
-    [0.21, 0.31, 0.41],
-    [0, 1, 0]
-  );
-  const img2Y = useTransform(scrollYProgress, [0.21, 0.41], [50, 0]);
-  const img3Opacity = useTransform(
-    scrollYProgress,
-    [0.41, 0.51, 0.61],
-    [0, 1, 0]
-  );
-  const img3Y = useTransform(scrollYProgress, [0.41, 0.61], [50, 0]);
-  const woman = useTransform(scrollYProgress, [0.01, 0.21], [50, 0]);
-  const womanOpacity = useTransform(
-    scrollYProgress,
-    [0.01, 0.11, 0.21],
-    [0, 0, 1]
-  );
+  // const { scrollYProgress } = useScroll({
+  //   target: sceneRef,
+  //   offset: ["start start", "end end"],
+  // });
+
+  // const fishX = useTransform(scrollYProgress, [0.8, 1], ["-20%", "200%"]);
+
+  // const grassY = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+
+  // const blurAmount = useTransform(
+  //   scrollYProgress,
+  //   [0, 0.1, 0.2, 0.5],
+  //   [1, 0, 0, 0]
+  // );
+
+  // const img1Opacity = useTransform(
+  //   scrollYProgress,
+  //   [0.01, 0.11, 0.21],
+  //   [0, 1, 0]
+  // );
+  // const img1Y = useTransform(scrollYProgress, [0.01, 0.21], [50, 0]);
+  // const img2Opacity = useTransform(
+  //   scrollYProgress,
+  //   [0.21, 0.31, 0.41],
+  //   [0, 1, 0]
+  // );
+  // const img2Y = useTransform(scrollYProgress, [0.21, 0.41], [50, 0]);
+  // const img3Opacity = useTransform(
+  //   scrollYProgress,
+  //   [0.41, 0.51, 0.61],
+  //   [0, 1, 0]
+  // );
+  // const img3Y = useTransform(scrollYProgress, [0.41, 0.61], [50, 0]);
+  // const woman = useTransform(scrollYProgress, [0.01, 0.21], [50, 0]);
+  // const womanOpacity = useTransform(
+  //   scrollYProgress,
+  //   [0.01, 0.11, 0.21],
+  //   [0, 0, 1]
+  // );
 
   return (
     <section
@@ -73,7 +88,7 @@ export const ScrollScene3 = () => {
           className="BG1"
           style={{
             y: grassY,
-            filter: useTransform(blurAmount, (value) => `blur(${value}px)`),
+            filter: blurFilter,
             position: "sticky",
             top: 0,
             left: 0,
@@ -117,11 +132,11 @@ export const ScrollScene3 = () => {
           }}
         />
 
-        <BlurOut3 scrollYProgress={scrollYProgress}>
+        <BlurOut8 scrollYProgress={scrollYProgress}>
           De vrouw krijgt een gouden kam van de oude vrouw en geeft deze af aan
           de nimf. Daarna krijgt ze een fluit en een spinnenwiel, ook deze geeft
           ze af een de nimf. De jager komt steeds meer bovendrijven.
-        </BlurOut3>
+        </BlurOut8>
       </motion.div>
 
       <motion.img
@@ -203,26 +218,24 @@ export const ScrollScene3 = () => {
         }}
       />
 
-      <motion.div>
-        <motion.img
-          src="/cp-frontend-NinaBreedstraet/vissen.png"
-          alt="Beeld 3"
-          style={{
-            position: "absolute",
-            top: "80%",
-            left: 0,
-            width: "28%",
-            height: "28%",
-            objectFit: "cover",
-            zIndex: 1,
-            overflow: "visible",
-            x: fishX,
-          }}
-        />
-        <BlurOut4 scrollYProgress={scrollYProgress}>
-          Nadat de jager helemaal komt bovendrijven, overstroomt de rivier.
-        </BlurOut4>
-      </motion.div>
+      <motion.img
+        src="/cp-frontend-NinaBreedstraet/vissen.png"
+        alt="Beeld 3"
+        style={{
+          position: "absolute",
+          top: "80%",
+          left: 0,
+          width: "28%",
+          height: "28%",
+          objectFit: "cover",
+          zIndex: 1,
+          overflow: "visible",
+          x: fishX,
+        }}
+      />
+      <BlurOut4 scrollYProgress={scrollYProgress}>
+        Nadat de jager helemaal komt bovendrijven, overstroomt de rivier.
+      </BlurOut4>
     </section>
   );
 };

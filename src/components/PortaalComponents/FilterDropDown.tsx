@@ -1,10 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import type { ReactNode, Dispatch, SetStateAction } from "react";
 
-interface FilterContextType {
+type FilterContextType = {
   genreFilter: string;
   setGenreFilter: Dispatch<SetStateAction<string>>;
-}
+};
 
 const FilterContext = createContext<FilterContextType>({
   genreFilter: "",

@@ -1,9 +1,9 @@
 import { motion, useTransform, MotionValue } from "framer-motion";
 
-interface Props {
+type Props = {
   scrollYProgress: MotionValue<number>;
   children: React.ReactNode;
-}
+};
 
 export const BlurOut3 = ({ scrollYProgress, children }: Props) => {
   const opacity = useTransform(

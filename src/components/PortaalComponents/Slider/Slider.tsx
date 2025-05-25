@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import styles from "./Slider.module.scss";
 import Splide from "@splidejs/splide";
 import { SlArrowLeftCircle, SlArrowRightCircle } from "react-icons/sl";
+import { chunk, shuffle } from "lodash";
 
 export type Sprookje = {
   id: string;
@@ -15,13 +16,8 @@ type SliderProps = {
   sprookjesData: Sprookje[];
 };
 
-function getRandomPairs(arr: Sprookje[], slidesCount = 3) {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  const pairs: Sprookje[][] = [];
-  for (let i = 0; i < slidesCount * 2 && i < shuffled.length; i += 2) {
-    pairs.push([shuffled[i], shuffled[i + 1]].filter(Boolean) as Sprookje[]);
-  }
-  return pairs;
+function getRandomPairs(arr: Sprookje[], slidesCount = 3): Sprookje[][] {
+  return chunk(shuffle(arr), 2).slice(0, slidesCount);
 }
 
 export const Slider = ({ sprookjesData }: SliderProps) => {

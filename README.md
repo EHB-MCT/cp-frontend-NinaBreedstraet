@@ -1,54 +1,15 @@
-# React + TypeScript + Vite
+# Sources
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [types of blur-out effects] : https://reactnative.dev/docs/react-node
+- [children react] : https://medium.com/@devUnemployed/react-children-props-with-typescript-9d369343e18a
+- [splider sldier] : https://splidejs.com/guides/getting-started/
+- [splider arrows] : https://splidejs.com/guides/getting-started/
+- [react icons]: https://react-icons.github.io/react-icons/
+- [foxes placement issue] : https://chatgpt.com/share/683330bb-72d4-8013-9976-75a3561cdd02
+- [deployment issue] : https://chatgpt.com/share/683331b6-6d28-8007-bffc-81ad7b9d9470
+- [scrolling issue scene 2] : https://chatgpt.com/share/68333231-beb0-8007-b529-54adaa20b814
+- [to get random pairs for the slider] : https://lodash.com/ https://www.geeksforgeeks.org/lodash/
+- [to get different groups of fairytales for the slider] : https://lodash.com/docs/4.17.15#chunk
+- [to create drop down menu]: https://medium.com/programming-essentials/how-to-manage-the-state-for-a-dropdownlist-with-react-hooks-ff2b4ac90792
+- [useContext en createContext gebruik] : https://blog.logrocket.com/how-to-use-react-context-typescript/?utm_source=chatgpt.com
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```

@@ -1,11 +1,11 @@
-import { BlurIn } from "./BlurIn";
-import { BlurOut } from "./BlurOut";
+import { BlurIn } from "../EffectenComponentsSprookje/BlurIn";
+import { BlurOut } from "../EffectenComponentsSprookje/BlurOut";
 import { motion, useTransform } from "framer-motion";
-import { BlurOut2 } from "./BlurOut2";
-import { ScrollScene2 } from "../Scenes/ScrollScene2";
+import { BlurOut2 } from "../EffectenComponentsSprookje/BlurOut2";
+import { ScrollScene2 } from "./ScrollScene2";
 import { useGrass } from "../../hooks/useGrass";
-import { ScrollScene3 } from "../../components/Scenes/ScrollScene3";
-import { ScrollScene4 } from "../../components/Scenes/ScrollScene4";
+import { ScrollScene3 } from "./ScrollScene3";
+import { ScrollScene4 } from "./ScrollScene4";
 import "../../index.scss";
 
 export const Parallax = () => {

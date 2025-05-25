@@ -1,28 +1,30 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { BlurOut5 } from "../EffectenComponentsSprookje/BlurOut5";
 import { BlurOut6 } from "../EffectenComponentsSprookje/BlurOut6";
 import { BlurOut7 } from "../EffectenComponentsSprookje/BlurOut7";
+import { useBlurOutScene4 } from "../../hooks/useScene4";
 
 export const ScrollScene4 = () => {
-  const sceneRef = useRef<HTMLElement>(null);
+  const { sceneRef, scrollYProgress, opacity, opacityPeople } =
+    useBlurOutScene4();
+  // const sceneRef = useRef<HTMLElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sceneRef,
-    offset: ["start start", "end end"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: sceneRef,
+  //   offset: ["start start", "end end"],
+  // });
 
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.01, 0.1, 0.3],
-    [0, 1, 1, 0]
-  );
+  // const opacity = useTransform(
+  //   scrollYProgress,
+  //   [0, 0.01, 0.1, 0.3],
+  //   [0, 1, 1, 0]
+  // );
 
-  const opacityPeople = useTransform(
-    scrollYProgress,
-    [0, 0.5, 0.5, 0.6],
-    [0, 1, 1, 0]
-  );
+  // const opacityPeople = useTransform(
+  //   scrollYProgress,
+  //   [0, 0.5, 0.5, 0.6],
+  //   [0, 1, 1, 0]
+  // );
   return (
     <section
       ref={sceneRef}
@@ -68,11 +70,11 @@ export const ScrollScene4 = () => {
           alt="Beeld 3"
           style={{
             position: "absolute",
-            width: "60%",
+            width: "50%",
             height: "60%",
             left: "50%",
             top: "-4vh",
-            rotate: "-20deg",
+            rotate: "-35deg",
             objectFit: "cover",
             overflow: "visible",
           }}
@@ -125,7 +127,6 @@ export const ScrollScene4 = () => {
           opacity: opacity,
         }}
       />
-
       <motion.img
         src="/cp-frontend-NinaBreedstraet/woman6.png"
         alt="Beeld 3"
@@ -157,7 +158,6 @@ export const ScrollScene4 = () => {
           opacity: opacityPeople,
         }}
       />
-
       <motion.div
         style={{
           position: "sticky",
