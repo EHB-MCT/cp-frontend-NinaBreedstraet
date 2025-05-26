@@ -22,7 +22,7 @@ export const BlurOut3 = ({ scrollYProgress, children }: Props) => {
         zIndex: 3,
         color: "white",
         width: "30rem",
-        marginLeft: "6rem",
+        marginLeft: "8rem",
         marginTop: "-45rem",
       }}
       transition={{ duration: 0.8 }}
