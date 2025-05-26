@@ -12,4 +12,7 @@
 - [to get different groups of fairytales for the slider] : https://lodash.com/docs/4.17.15#chunk
 - [to create drop down menu]: https://medium.com/programming-essentials/how-to-manage-the-state-for-a-dropdownlist-with-react-hooks-ff2b4ac90792
 - [useContext en createContext gebruik] : https://blog.logrocket.com/how-to-use-react-context-typescript/?utm_source=chatgpt.com
-- [pixelated image] : https://www.reddit.com/r/framer/comments/16oiov9/i_need_help_high_resolution_images_become/ 
+- [pixelated image] : https://www.reddit.com/r/framer/comments/16oiov9/i_need_help_high_resolution_images_become/
+- [easter egg: sound when you click on frogs]: https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/
+- [easter egg: sound when you click on frogs]: https://motion.dev/docs/react-gestures
+- [easter egg: sound when you click on frogs]: https://www.youtube.com/watch?v=U1T_J6Odoqg

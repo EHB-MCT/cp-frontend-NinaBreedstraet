@@ -3,6 +3,8 @@ import { BlurOut5 } from "../EffectenComponentsSprookje/BlurOut5";
 import { BlurOut6 } from "../EffectenComponentsSprookje/BlurOut6";
 import { BlurOut7 } from "../EffectenComponentsSprookje/BlurOut7";
 import { useBlurOutScene4 } from "../../hooks/useScene4";
+import sound from "../../../public/FrogSound.mp3";
+import useSound from "use-sound";
 
 export const ScrollScene4 = () => {
   const {
@@ -13,24 +15,11 @@ export const ScrollScene4 = () => {
     yLelies,
     opacityLelies,
   } = useBlurOutScene4();
-  // const sceneRef = useRef<HTMLElement>(null);
 
-  // const { scrollYProgress } = useScroll({
-  //   target: sceneRef,
-  //   offset: ["start start", "end end"],
-  // });
+  const [frogSound] = useSound(sound, {
+    volume: 0.25,
+  });
 
-  // const opacity = useTransform(
-  //   scrollYProgress,
-  //   [0, 0.01, 0.1, 0.3],
-  //   [0, 1, 1, 0]
-  // );
-
-  // const opacityPeople = useTransform(
-  //   scrollYProgress,
-  //   [0, 0.5, 0.5, 0.6],
-  //   [0, 1, 1, 0]
-  // );
   return (
     <section
       ref={sceneRef}
@@ -107,6 +96,9 @@ export const ScrollScene4 = () => {
       <motion.img
         src="/cp-frontend-NinaBreedstraet/frog3.png"
         alt="Beeld 3"
+        onTap={(_event, _info) => {
+          frogSound();
+        }}
         style={{
           position: "absolute",
           top: "16%",
@@ -124,6 +116,9 @@ export const ScrollScene4 = () => {
       <motion.img
         src="/cp-frontend-NinaBreedstraet/toad.png"
         alt="Beeld 3"
+        onTap={(_event, _info) => {
+          frogSound();
+        }}
         style={{
           position: "absolute",
           top: "16%",
