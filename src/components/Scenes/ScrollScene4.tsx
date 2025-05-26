@@ -5,8 +5,14 @@ import { BlurOut7 } from "../EffectenComponentsSprookje/BlurOut7";
 import { useBlurOutScene4 } from "../../hooks/useScene4";
 
 export const ScrollScene4 = () => {
-  const { sceneRef, scrollYProgress, opacity, opacityPeople } =
-    useBlurOutScene4();
+  const {
+    sceneRef,
+    scrollYProgress,
+    opacity,
+    opacityPeople,
+    yLelies,
+    opacityLelies,
+  } = useBlurOutScene4();
   // const sceneRef = useRef<HTMLElement>(null);
 
   // const { scrollYProgress } = useScroll({
@@ -49,8 +55,8 @@ export const ScrollScene4 = () => {
         }}
       >
         <BlurOut5 scrollYProgress={scrollYProgress}>
-          Tijdens de overstroming veranderen de zoon en zijn vrouw in een kikker
-          en een pad.
+          Door de overstroming verandert het jonge koppel in een kikker en een
+          pad.
         </BlurOut5>
         <motion.img
           src="/cp-frontend-NinaBreedstraet/blad2.png"
@@ -63,6 +69,8 @@ export const ScrollScene4 = () => {
             top: "-8vh",
             overflow: "visible",
             objectFit: "cover",
+            y: yLelies,
+            opacity: opacityLelies,
           }}
         />
         <motion.img
@@ -73,10 +81,12 @@ export const ScrollScene4 = () => {
             width: "50%",
             height: "60%",
             left: "50%",
-            top: "-4vh",
-            rotate: "-35deg",
+            top: "-8vh",
+            rotate: "-25deg",
             objectFit: "cover",
             overflow: "visible",
+            y: yLelies,
+            opacity: opacityLelies,
           }}
         />
       </motion.div>
@@ -204,9 +214,9 @@ export const ScrollScene4 = () => {
         }}
       >
         <BlurOut6 scrollYProgress={scrollYProgress}>
-          Eens de overstroming voorbij is en ze terug veranderen in mensen, zijn
-          ze ver verwijderd van elkaar, herinneren zich niks meer en worden
-          schapenherders.
+          Zodra het water weer zakt worden zij weer mensen maar zijn ze zo ver
+          van elkaar verwijderd dat ze zich niets meer van elkaar herinneren. Ze
+          trekken elk verder als schaapsherder.
         </BlurOut6>
         <motion.img
           src="/cp-frontend-NinaBreedstraet/kiss.png"
@@ -221,8 +231,8 @@ export const ScrollScene4 = () => {
         />
 
         <BlurOut7 scrollYProgress={scrollYProgress}>
-          Enkele jaren later, komen ze elkaar terug tegen en worden ze terug
-          verliefd op elkaar.
+          Enkele jaren later ontmoeten ze elkaar toevallig weer op een weide. Zo
+          worden ze herenigd en ontdekken hun vergeten liefde.
         </BlurOut7>
       </motion.div>
     </section>

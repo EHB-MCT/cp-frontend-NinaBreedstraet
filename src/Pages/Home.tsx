@@ -17,9 +17,7 @@ function Home() {
   const icon = FiSearch({ size: 24, color: "black" });
   const { data } = useFairytaleCards();
 
-  const sprookjesslider = data.filter((sprookjes) =>
-    sprookjes.fairytale.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const sprookjesslider = data;
 
   const filteredSprookjes = data.filter((item) => {
     const matchesSearch = item.fairytale

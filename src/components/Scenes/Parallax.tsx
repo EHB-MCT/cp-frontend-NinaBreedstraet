@@ -63,14 +63,18 @@ export const Parallax = () => {
 
         <motion.div className="text-container" ref={ref} style={{ y: textY }}>
           <BlurOut>
-            De vader van een jager beloofde zijn zoon aan de nimf te geven in
-            ruil voor voorspoed, maar verzweeg dit voor zijn vrouw...
+            Een man belooft zijn pasgeboren zoon aan de waternimf in de vijver
+            in ruil voor voorspoed, maar verzwijgt deze verdrinkingsbelofte voor
+            zijn vrouw. Bij de geboorte brengt hij zijn zoon niet naar de
+            waternimf.
           </BlurOut>
         </motion.div>
 
         <motion.div className="text-container2" ref={ref} style={{ y: textY }}>
           <BlurOut2>
-            Wanneer de zoon volwassen is, trekt de nimf hem de vijver in...
+            Als de zoon volwassen is, neemt de nimf wraak en lokt hem met haar
+            betoverende gezang steeds dieper de vijver in, totdat hij op de
+            bodem blijft liggen alsof hij slaapt.
           </BlurOut2>
         </motion.div>
 

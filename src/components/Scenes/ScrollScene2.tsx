@@ -74,8 +74,9 @@ export const ScrollScene2 = () => {
         />
 
         <BlurOut3 scrollYProgress={scrollYProgress}>
-          De vrouw van de zoon probeert hem tevergeefs te helpen en ze droomt
-          over een oude vrouw in een hutje in de bergen.
+          Zijn vrouw probeert hem tevergeefs te helpen. Ze droomt over een oude
+          vrouw in een hutje hoog in de bergen, die haar raad en hulpmiddelen
+          belooft.
         </BlurOut3>
       </div>
     </section>

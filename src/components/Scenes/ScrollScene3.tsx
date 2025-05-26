@@ -4,7 +4,6 @@ import { BlurOut8 } from "../EffectenComponentsSprookje/BlurOut8";
 import { useBlurOutScene3 } from "../../hooks/useScene3";
 
 export const ScrollScene3 = () => {
-  // const sceneRef = useRef<HTMLElement>(null);
   const {
     blurFilter,
     sceneRef,
@@ -19,47 +18,8 @@ export const ScrollScene3 = () => {
     img3Opacity,
     woman,
     womanOpacity,
+    yLelies,
   } = useBlurOutScene3();
-
-  // const { scrollYProgress } = useScroll({
-  //   target: sceneRef,
-  //   offset: ["start start", "end end"],
-  // });
-
-  // const fishX = useTransform(scrollYProgress, [0.8, 1], ["-20%", "200%"]);
-
-  // const grassY = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-
-  // const blurAmount = useTransform(
-  //   scrollYProgress,
-  //   [0, 0.1, 0.2, 0.5],
-  //   [1, 0, 0, 0]
-  // );
-
-  // const img1Opacity = useTransform(
-  //   scrollYProgress,
-  //   [0.01, 0.11, 0.21],
-  //   [0, 1, 0]
-  // );
-  // const img1Y = useTransform(scrollYProgress, [0.01, 0.21], [50, 0]);
-  // const img2Opacity = useTransform(
-  //   scrollYProgress,
-  //   [0.21, 0.31, 0.41],
-  //   [0, 1, 0]
-  // );
-  // const img2Y = useTransform(scrollYProgress, [0.21, 0.41], [50, 0]);
-  // const img3Opacity = useTransform(
-  //   scrollYProgress,
-  //   [0.41, 0.51, 0.61],
-  //   [0, 1, 0]
-  // );
-  // const img3Y = useTransform(scrollYProgress, [0.41, 0.61], [50, 0]);
-  // const woman = useTransform(scrollYProgress, [0.01, 0.21], [50, 0]);
-  // const womanOpacity = useTransform(
-  //   scrollYProgress,
-  //   [0.01, 0.11, 0.21],
-  //   [0, 0, 1]
-  // );
 
   return (
     <section
@@ -79,11 +39,11 @@ export const ScrollScene3 = () => {
           //height: "100%",
           height: "150vh",
           width: "auto",
-          marginTop: "50vh",
+          marginTop: "40vh",
         }}
       >
         <motion.img
-          src="/cp-frontend-NinaBreedstraet/BG3M.png"
+          src="/cp-frontend-NinaBreedstraet/BG3.webp"
           alt="Achtergrond"
           className="BG1"
           style={{
@@ -100,6 +60,23 @@ export const ScrollScene3 = () => {
           }}
           transition={{ duration: 0.2 }}
         />
+
+        <motion.img
+          src="/cp-frontend-NinaBreedstraet/stars.gif"
+          alt="Beeld 3"
+          style={{
+            position: "absolute",
+            top: "25%",
+            bottom: 0,
+            left: "8%",
+            width: "13%",
+            height: "13%",
+            objectFit: "cover",
+            zIndex: 1,
+            overflow: "visible",
+          }}
+        />
+
         <motion.img
           src="/cp-frontend-NinaBreedstraet/lelies2.png"
           alt="Beeld 3"
@@ -113,6 +90,7 @@ export const ScrollScene3 = () => {
             objectFit: "cover",
             zIndex: 1,
             overflow: "visible",
+            y: yLelies,
           }}
         />
 
@@ -129,13 +107,14 @@ export const ScrollScene3 = () => {
             objectFit: "cover",
             zIndex: 1,
             overflow: "visible",
+            y: yLelies,
           }}
         />
 
         <BlurOut8 scrollYProgress={scrollYProgress}>
-          De vrouw krijgt een gouden kam van de oude vrouw en geeft deze af aan
-          de nimf. Daarna krijgt ze een fluit en een spinnenwiel, ook deze geeft
-          ze af een de nimf. De jager komt steeds meer bovendrijven.
+          De oude vrouw geeft een gouden kam, een zilveren fluit en uiteindelijk
+          een houten spinnenwiel aan de jonge vrouw die deze aan de nimf geeft.
+          Bij elke gave drijft hij dichter naar de oever.
         </BlurOut8>
       </motion.div>
 
@@ -234,7 +213,8 @@ export const ScrollScene3 = () => {
         }}
       />
       <BlurOut4 scrollYProgress={scrollYProgress}>
-        Nadat de jager helemaal komt bovendrijven, overstroomt de rivier.
+        Zodra de verdronken zoon boven het wateroppervlak verschijnt, zwelt de
+        rivier aan en overstroomt het omliggende land.
       </BlurOut4>
     </section>
   );

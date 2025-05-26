@@ -33,7 +33,10 @@ function About() {
             er React-componenten, state management en visuele effecten toepassen
             om hun sprookjeswereld tot leven te brengen.
           </p>
-          <a className={styles.buttonAbout} href="/Home">
+          <a
+            className={styles.buttonAbout}
+            href="/cp-frontend-NinaBreedstraet/home"
+          >
             Bekijk alle sprookjes!
           </a>
         </div>

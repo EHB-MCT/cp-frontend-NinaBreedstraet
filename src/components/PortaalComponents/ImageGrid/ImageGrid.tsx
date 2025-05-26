@@ -52,7 +52,7 @@ const images = [
     size: 8.5,
   },
   {
-    src: "/ImageSchool8.jpg",
+    src: "/ImageSchool8.jpeg",
     shape: styles.roundedBottomRightLarge,
     x: 72,
     y: 64,

@@ -16,6 +16,7 @@ export const useBlurOutScene3 = (): {
   woman: MotionValue<number>;
   womanOpacity: MotionValue<number>;
   blurAmount: MotionValue<number>;
+  yLelies: MotionValue<number>;
 } => {
   const sceneRef = useRef<HTMLElement>(null);
 
@@ -60,6 +61,8 @@ export const useBlurOutScene3 = (): {
     [0, 0, 1]
   );
 
+  const yLelies = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
+
   return {
     blurFilter,
     img1Y,
@@ -75,5 +78,6 @@ export const useBlurOutScene3 = (): {
     blurAmount,
     scrollYProgress,
     fishX,
+    yLelies,
   };
 };
